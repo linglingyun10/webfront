@@ -1,0 +1,79 @@
+{
+    "success": true,
+    "message": "OK",
+    "result": {
+        "title": "我的接待",
+        "list": [
+            {
+                "serialNum": 106,
+                "personName": "李磊",
+                "personType": "代理",
+                "reservationMode": "访客",
+                "waitTime": "32分钟",
+                "zdmg": 1,
+                "ysza": true,
+                "ajzl": false
+            },
+            {
+                "serialNum": 107,
+                "personName": "韩梅梅",
+                "personType": "代理",
+                "reservationMode": "访客",
+                "waitTime": "32分钟",
+                "zdmg": 0,
+                "ysza": false,
+                "ajzl": false
+            },
+            {
+                "serialNum": 108,
+                "personName": "孙琦",
+                "personType": "代理",
+                "reservationMode": "访客",
+                "waitTime": "32分钟",
+                "zdmg": 3,
+                "ysza": false,
+                "ajzl": true
+            },
+            {
+                "serialNum": 109,
+                "personName": "赵六",
+                "personType": "代理",
+                "reservationMode": "访客",
+                "waitTime": "32分钟",
+                "zdmg": 4,
+                "ysza": false,
+                "ajzl": true
+            },
+            {
+                "serialNum": 110,
+                "personName": "王五",
+                "personType": "代理",
+                "reservationMode": "访客",
+                "waitTime": "32分钟",
+                "zdmg": 0,
+                "ysza": true,
+                "ajzl": true
+            },
+            {
+                "serialNum": 111,
+                "personName": "李四",
+                "personType": "代理",
+                "reservationMode": "访客",
+                "waitTime": "32分钟",
+                "zdmg": 0,
+                "ysza": true,
+                "ajzl": true
+            },
+            {
+                "serialNum": 112,
+                "personName": "张三",
+                "personType": "代理",
+                "reservationMode": "访客",
+                "waitTime": "32分钟",
+                "zdmg": 0,
+                "ysza": true,
+                "ajzl": true
+            }
+        ]
+    }
+}

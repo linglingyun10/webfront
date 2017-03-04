@@ -1,0 +1,483 @@
+/**
+* @author xieyq
+* @file common.cs
+**/
+html, body {
+    width: 100%;
+    height: 100%;
+}
+.fd-body {
+    min-width: 1280px;
+    min-height: 699px;
+}
+/********* 整个容器的样式 *********/
+.fd-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+/**** 左侧容器样式 ****/
+.fd-left-wrapper {
+    position: relative;
+    float: left;
+    padding: 2rem 2rem 0;
+    box-sizing: border-box;
+    width: 32%;
+    height: 100%;
+}
+/**** 右侧布局 ****/
+.fd-right-wrapper {
+    position: relative;
+    margin-left: 32%;
+    padding-left: 10%;
+    height: 100%;
+    background: url(../images/bg-right.png) 0 center/cover no-repeat;
+}
+/**** 左侧导航线绘制 ****/
+.fd-nav-line {
+    position: absolute;
+    top: 0;
+    left: 3.39rem;
+    height: 100%;
+    width: 3px;
+    background-color: #d3dee8;
+}
+/**** 左侧内容样式 ****/
+.fd-left-con {
+    position: relative;
+    padding-top: 2.44rem;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+/**** 左侧内容头部标题部分 ****/
+.fd-left-con-h {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7.72rem;
+    height: 2.44rem;
+    border: 1px solid #1c6b6f;
+    box-shadow: 0 1px 4px 0 rgba(15, 70, 73, 0.55);
+    border-radius: 22px;
+    line-height: 2.44rem;
+    font-family: "microsoft yahei";
+    font-size: 1rem;
+    color: #0f4649;
+    text-align: center;
+    background-color: #fff;
+}
+.fd-left-con-info-wrap {
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 100%;
+}
+/*** 左侧内容信息部分样式 ****/
+.fd-left-con-info,
+.fd-left-con-info ul{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+/**** 当个排队的item样式 ****/
+.fd-queue-item {
+    height: 12.5%;
+    padding: 1.28rem 0;
+    box-sizing: border-box;
+}
+.fd-queue-num-wrap {
+    float: left;
+    height: 2rem;
+    background-color: #fff;
+}
+.fd-queue-item .fd-queue-num{
+    display: block;
+    margin-top: 0.22rem;
+    width: 2.89rem;
+    height: 1.5rem;
+    border-radius: 0.75rem;
+    line-height: 1.5rem;
+    color: #424242;
+    font-family: "Arial";
+    font-size: 1rem;
+    text-align: center;
+    background-color: #d9f3eb;
+}
+.fd-queue-item.active .fd-queue-num{
+    color: #fff;
+    background-color: #1f8e92;
+}
+.fd-queue-con {
+    margin-left: 3.44rem;
+}
+.fd-queue-con-h {
+    margin-bottom: 0.39rem;
+}
+.fd-queue-item-name {
+    font-size: 1.22rem;
+    color: #073144;
+    font-family: "microsoft yahei";
+	margin-right:0.5rem;
+}
+.fd-queue-item-info {
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 0.89rem;
+    color: #555;
+    font-family: "microsoft yahei";
+}
+.fd-queue-item-info:not(:last-child):after {
+    content: '|';
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+	color: #cfcfd0;
+}
+.fd-queue-item-time:before {
+    content: url(../images/icon-time.png);
+    margin-right: 0.28rem;
+}
+/**** 排队item的label容器样式 ****/
+.fd-queue-item-label-wrap {
+    overflow: hidden;
+}
+.fd-queue-item-label {
+    float: left;
+    margin-right: 0.56rem;
+    border: 1px solid #b7b7b7;
+    width: 4.8rem;
+    height: 1.22rem;
+    line-height: 1.22rem;
+    font-size: 0.78rem;
+    font-family: "microsoft yahei";
+    color: #555;
+}
+
+.fd-queue-item-wrap {
+	width: 4.2rem;
+    margin: 0 0.31rem;
+}
+
+.fd-queue-item-label:before {
+    margin-left: 0.33rem;
+    margin-right: 0.28rem;
+}
+.fd-label-01 .fd-label-icon {
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin-top: 0.275rem;
+    margin-right: 0.28rem;
+    width: 0.83rem;
+    height: 0.67rem;
+}
+
+.fd-label-special .fd-label-icon {
+	margin-top: 0 ;
+    margin-right: 0 ;
+}
+.fd-label-01 .fd-label-icon label {
+    position: absolute;
+    color: #526162;
+    line-height: 0.28rem;
+    font-size: 0.67rem;
+}
+.fd-label-01 .fd-label-icon label:before {
+    content: '●';
+}
+.fd-label-01 .fd-label-icon label:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+.fd-label-01 .fd-label-icon label:nth-child(2) {
+    top: 0;
+    right: 0;
+}
+.fd-label-01 .fd-label-icon label:nth-child(3) {
+    bottom: 0;
+    left: 0;
+}
+.fd-label-01 .fd-label-icon label:nth-child(4) {
+    bottom: 0;
+    right: 0;
+}
+/**** 根据等级设置对应的背景颜色 ****/
+.fd-label-01[type="1"] label:nth-child(1),
+.fd-label-01[type="2"] label:nth-child(1),
+.fd-label-01[type="3"] label:nth-child(1),
+.fd-label-01[type="4"] label:nth-child(1),
+.fd-label-01[type="2"] label:nth-child(2),
+.fd-label-01[type="3"] label:nth-child(2),
+.fd-label-01[type="4"] label:nth-child(2),
+.fd-label-01[type="3"] label:nth-child(3),
+.fd-label-01[type="4"] label:nth-child(3),
+.fd-label-01[type="4"] label:nth-child(4){
+    color: #f86058;
+}
+.fd-label-01 span {
+    display: block;
+    margin-left: 1.0rem;
+    width: 3.6rem;
+}
+
+.fd-label-02 {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    width: 0.6rem;
+}
+
+.fd-label-02:before {
+    content: '?';
+    font-size: 0.89rem;
+    font-family: 'Arial';
+    font-weight: bold;
+    color: #ffb400;
+}
+.fd-label-03 {
+    background: url(../images/icon-queue-item-label-03.png) 5px center no-repeat;
+    padding-left: 1.4rem;
+    width: 3.57rem;
+}
+/**** 页面右侧部分的样式 ****/
+.fd-right-con {
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 2.78rem;
+    padding-bottom: 6.83rem;
+    width: 100%;
+    height: 100%;
+}
+/**** 右侧头部内容部分 ****/
+.fd-right-h {
+    position: absolute;
+    top: 1.11rem;
+    width: 100%;
+    height: 1.89rem;
+}
+/**** 右侧内容标题部分 ****/
+.fd-right-h-tit {
+    float: left;
+}
+.fd-right-h-tit span {
+    font-family: "microsoft yahei";
+    height: 1.89rem;
+}
+/**** logo的名称 ****/
+.fd-logo-name {
+    padding-left: 2.11rem;
+    font-size: 1.39rem;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 1px 1px rgba(21,84,73,0.75);
+    background: url(../images/icon-logo.png) 0 bottom/1.56rem 1.89rem no-repeat;
+}
+.fd-split-line {
+    margin: 0 0.5rem;
+    color: #fff;
+}
+.fd-sy-name {
+    font-size: 1.11rem;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(21,84,73,0.75);
+}
+/**** 右侧内容用户位置部分 ****/
+.fd-user-position-wraper {
+    float: right;
+    margin-right: 1.44rem;
+    font-family: "microsoft yahei";
+    font-size: 0.78rem;
+    color: #fff;
+}
+.fd-user-position-label {
+    padding-left: 0.89rem;
+    background: url(../images/icon-user-pos.png) 0 center/0.67rem 0.83rem no-repeat;
+}
+/*** 叫号接待情况容器 ****/
+.fd-reception-wrapper {
+    position: absolute;
+    left: 50%;
+    bottom: 3.72rem;
+    width: 32.28rem;
+    height: 5.22rem;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-radius: 3.5rem;
+    box-shadow: inset 0 3px 3px 0 rgba(16, 87, 91, 0.5), 0 2px 0 0 rgba(255,255,255,0.17);
+    background-color: #166f74;
+}
+/**** 接待信息项样式 ****/
+.fd-reception-item-wrap {
+    float: left;
+    padding: 1rem 0;
+    box-sizing: border-box;
+    width: 24%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+}
+.fd-reception-item-wrap:first-child,
+.fd-reception-item-wrap:last-child {
+    width: 26%;
+}
+
+/**** 最右侧橘黄色样式 ****/
+.fd-reception-item-wrap:first-child:hover {
+	background-color: #f07f1b;
+    border-radius: 3.5rem 0 0 3.5rem;
+    box-shadow: inset 0 3px 3px 0 rgba(255,255,255,0.26), 0 1px 3px 0 rgba(42,49,57,0.43);
+	cursor: pointer;
+}
+
+.fd-reception-item-wrap.active {
+    background-color: #f07f1b;
+    border-radius: 0 3.5rem 3.5rem 0;
+    box-shadow: inset 0 3px 3px 0 rgba(255,255,255,0.26), 0 1px 3px 0 rgba(42,49,57,0.43);
+	cursor: pointer;
+}
+.fd-reception-item {
+    box-sizing: border-box;
+    border-right: 1px solid #458c90;
+}
+.fd-reception-item-wrap:last-child .fd-reception-item {
+    border-right: none;
+}
+.fd-reception-item-name {
+    margin-bottom: 0.28rem;
+    font-size: 1rem;
+}
+.fd-reception-item-value {
+    font-family: "Arial";
+    font-size: 1.89rem;
+}
+.fd-reception-item-value .fd-percent {
+    font-size: 1.33rem;
+}
+/**** 中间水泡样式 ****/
+.fd-main-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+   /* background: url(../images/img-Blister.png) center center/contain no-repeat;*/
+}
+/*** 中间叫号部分样式 ****/
+.fd-queue-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 26rem;
+    height: 26rem;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.fd-my-reception {
+    display: block;
+    line-height: 2rem;
+    font-size: 1.22rem;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+.fd-my-reception:hover {
+    font-size: 1.33rem;
+}
+.fd-my-reception-value {
+    font-family: Arial;
+    text-align: center;
+    color: #fff;
+    font-size: 5.22rem;
+}
+.fd-queue-btn {
+    position: absolute;
+    bottom: 2.78rem;
+    left: 50%;
+    font-family: "microsoft yahei";
+    text-align: center;
+    font-size: 1.67rem;
+    color: #228985;
+    text-shadow: 0 1px 0 rgba(19,117,122,0.75), 0 1px 0 rgba(84,202,184,0.9);
+	text-shadow: 1px 1px #54cab8;
+}
+/*
+.fd-queue-btn:hover {
+    color: #1d7571;
+    font-size: 1.78rem;
+    cursor: url(../images/img-cursor.ico), auto;
+}*/
+.fd-pages {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    right: 1rem;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.fd-pages a {
+    display: block;
+    color: #86888a;
+}
+.fd-pages a:hover,
+.fd-pages a.fd-current {
+    color: #0f4649;
+}
+.fd-pages-prev,
+.fd-pages-next {
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    width: 20px;
+    height: 14px;
+    z-index: 2;
+    background: url(../images/icon-pages-arrow1.png) 0 0 no-repeat;
+}
+.fd-pages-prev:hover,
+.fd-pages-next:hover  {
+    opacity: 1;
+}
+.fd-pages-prev.disabled,
+.fd-pages-next.disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.fd-pages-prev.hided,
+.fd-pages-next.hided {
+   display: none;
+}
+.fd-pages-prev {
+    top: 0.28rem;
+}
+.fd-pages-prev {
+    bottom: 1rem;
+    -webkit-transform: rotateZ(180deg);
+    -moz-transform: rotateZ(180deg);
+    -ms-transform: rotateZ(180deg);
+    -o-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+}
+/**** 鼠标样式图层 ****/
+.fd-cursor {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 32px;
+ }
+ 
+.fd-label-02 span {
+    margin-right: 0.2rem;
+    margin-left: 1.3rem;
+	margin-top: 0;
+}
+

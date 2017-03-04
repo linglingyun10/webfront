@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html ng-app="queue">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <!--<link type="text/css" rel="stylesheet" href="css/svg.css">-->
+    <script type="text/javascript" src="js/lib/jquery/jQuery.v1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/app/setHtmlSize.js"></script>
+    <script type="text/javascript" src="js/app/snap.svg-min.js"></script>
+    <script type="text/javascript" src="js/app/pluginFliudWater.js"></script>
+</head>
+<body class="fd-body">
+<article class="fd-wrapper" ng-controller="queueController">
+    <!-- 左侧内容容器部分 -->
+    <div class="fd-left-wrapper">
+        <!-- 左侧内容的导航线条部分 -->
+        <p class="fd-nav-line"></p>
+        <div class="fd-pages">
+            <a ng-class="{'fd-current': pageNum == pageData.currentPage}" ng-repeat="pageNum in pageList" ng-click="updatePage(pageNum)">●</a>
+        </div>
+        <!-- 左侧的内容部分 -->
+        <section class="fd-left-con">
+            <!-- 左侧内容的头部 -->
+            <header class="fd-left-con-h">
+                <span ng-bind="queueData.title"></span>
+                <label ng-bind="queueData.list.length"></label>
+            </header>
+            <!-- fd-left-con-h end -->
+            <!-- 左侧排队列表信息容器部分 -->
+            <div class="fd-left-con-info-wrap">
+                <a class="fd-pages-prev" ng-class="{'hided': pageData.currentPage==1}" ng-if="pageData.countPage > 1" ng-click="updatePage(pageData.currentPage - 1)"></a>
+                <!--fd-left-con-info 左侧排队列表信息内容部分-->
+                <div class="fd-left-con-info">
+                    <!--排队列表部分-->
+                    <ul>
+                        <!--排队列表的单项信息部分 -->
+                        <li class="fd-queue-item" ng-class="{'active': $index == 0}" ng-repeat="queueData in queueData.list" ng-show="isShow(pageData, $index)">
+                            <!--单项序号展示-->
+                            <div class="fd-queue-num-wrap">
+                                <label class="fd-queue-num" ng-bind="queueData.serialNum"></label>
+                            </div>
+                            <!--fd-queue-num-wrap end-->
+                            <!--fd-queue-con 单项信息展示内容-->
+                            <section class="fd-queue-con">
+                                <!--fd-queue-con-h 信息项的头部-->
+                                <header class="fd-queue-con-h">
+                                    <span class="fd-queue-item-name" ng-bind="queueData.personName"></span>
+                                    <span class="fd-queue-item-info fd-queue-item-type" ng-bind="queueData.personType"></span>
+                                    <span class="fd-queue-item-info fd-queue-item-mode" ng-bind="queueData.reservationMode"></span>
+                                    <span class="fd-queue-item-info fd-queue-item-time" ng-bind="queueData.waitTime"></span>
+                                </header>
+                                <!--信息项的标签部分内容-->
+                                <div class="fd-queue-item-label-wrap">
+                                    <!--重大敏感标签 type可以控制红色圆点的个数-->
+                                    <div class="fd-queue-item-label fd-label-01" ng-if="queueData.zdmg > 0" type="{{queueData.zdmg}}">
+                                        <!--圆点的展现-->
+										<div class="fd-queue-item-wrap">
+											<div class="fd-label-icon">
+												<label></label>
+												<label></label>
+												<label></label>
+												<label></label>
+											</div>
+											<!--fd-label-icon end-->
+											<span>重大敏感</span>
+										</div>
+                                    </div>
+                                    <div class="fd-queue-item-label fd-label-01 fd-label-special" ng-if="queueData.ysza">
+										<div class="fd-label-02 fd-label-icon ">
+											
+										</div>
+										<span>疑似重案</span>
+									</div>
+                                    <div class="fd-queue-item-label fd-label-03" ng-if="queueData.ajzl">
+										<span>案件阻拦</span>
+									</div>
+                                </div>
+                                <!--fd-queue-item-label-wrap end-->
+                            </section>
+                            <!-- fd-queue-con end -->
+                        </li>
+                        <!--fd-queue-item end-->
+                    </ul>
+                </div>
+                <!--fd-left-con-info end-->
+                <a class="fd-pages-next" ng-if="pageData.countPage > 1" ng-class="{'hided': pageData.currentPage==pageData.countPage}" ng-click="updatePage(pageData.currentPage + 1)"></a>
+            </div>
+            <!--fd-left-con-info-wrap end-->
+        </section>
+        <!-- fd-left-con end -->
+    </div>
+    <!--fd-left-wrapper end -->
+    <!--右侧信息容器-->
+    <section class="fd-right-wrapper">
+        <!--右侧信息内容-->
+        <div class="fd-right-con">
+            <!-- fd-right-h 右侧头部内容 -->
+            <header class="fd-right-h">
+                <!--fd-right-h 头部信息标题部分-->
+                <div class="fd-right-h-tit">
+                    <span class="fd-logo-name">北京法院</span>
+                    <span class="fd-split-line">|</span>
+                    <span class="fd-sy-name">立案系统</span>
+                </div>
+                <!--fd-right-h-tit end-->
+                <!-- 用户位置部分-->
+                <div class="fd-user-position-wraper">
+                    <label class="fd-user-position-label">我的位置</label>
+                    <span class="fd-user-position">窗口2</span>
+                    <span class="fd-split-line">|</span>
+                    <label class="fd-win-mode">非窗口模式</label>
+                </div>
+                <!--fd-user-position-wraper end-->
+            </header>
+            <!--fd-right-h end-->
+            <div class="fd-main-wrapper">
+			<svg version="1.1" id="map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	           width="100%" height="100%"   viewBox="0 0 700 700" enable-background="new 0 0 100% 100%" xml:space="preserve">
+            </svg>
+                <!--<div class="fd-queue-info">
+                    <a class="fd-my-reception" ng-click="getMyReception()">我的接待</a>
+                    <h1 class="fd-my-reception-value">10</h1>
+                    <a class="fd-queue-btn" show-cursor ng-click="queue()">点击叫号</a>
+                </div>-->
+            </div>
+            <!-- fd-reception-wrapper 接待信息容器-->
+            <div class="fd-reception-wrapper">
+                <!-- fd-reception-item 接待信息项大厅等候数-->
+                <div class="fd-reception-item-wrap">
+                    <!-- 接待信息-->
+                    <div class="fd-reception-item">
+                        <h5 class="fd-reception-item-name">大厅等候数</h5>
+                        <h3 class="fd-reception-item-value">12</h3>
+                    </div>
+                    <!-- fd-reception-item end-->
+                </div>
+                <!-- fd-reception-item-wrap end-->
+                <!-- fd-reception-item 接待信息项大厅接待数-->
+                <div class="fd-reception-item-wrap">
+                    <!-- 接待信息-->
+                    <div class="fd-reception-item">
+                        <h5 class="fd-reception-item-name">大厅接待数</h5>
+                        <h3 class="fd-reception-item-value">50</h3>
+                    </div>
+                    <!-- fd-reception-item end-->
+                </div>
+                <!-- fd-reception-item-wrap end-->
+                <!-- fd-reception-item 接待信息项接待占比-->
+                <div class="fd-reception-item-wrap">
+                    <!-- 接待信息-->
+                    <div class="fd-reception-item">
+                        <h5 class="fd-reception-item-name">接待占比</h5>
+                        <h3 class="fd-reception-item-value">20<label class="fd-percent">%</label></h3>
+                    </div>
+                    <!-- fd-reception-item end-->
+                </div>
+                <!-- fd-reception-item-wrap end-->
+                <!-- fd-reception-item 接待信息项已立案件数-->
+                <div class="fd-reception-item-wrap active">
+                    <!-- 接待信息-->
+                    <div class="fd-reception-item">
+                        <h5 class="fd-reception-item-name">已立案件数</h5>
+                        <h3 class="fd-reception-item-value">7</h3>
+                    </div>
+                    <!-- fd-reception-item end-->
+                </div>
+				<div class="fd-reception-item-stop-wrap" id="ztbtn">
+					<a href="###">暂停</a>
+				</div>                
+                
+                <input type="button"  value="更新内容" onclick="updateText();"/>
+                <!-- fd-reception-item-wrap end-->
+            </div>
+            <!-- fd-reception-wrapper end-->
+        </div>
+        <!--fd-right-con end-->
+    </section>
+    <!--fd-right-wrapper end-->
+</article>
+<!--fd-wrapper end-->
+<img src="images/img-cursor.png" class="fd-cursor js-cursor">
+<script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/app/index.js"></script>
+<script type="text/javascript">
+	var currentCount = 10;
+	var x=new DrawFluidWater("#map",
+            {
+                x:200,
+                y:200,
+                scale:1,
+                width:300,
+                height:200,
+                viewBox:0.8,
+                currentCount: currentCount,
+                backgroundColor:"#fff",
+                isShowConsole:true,//  放出更新日志
+                callback:function(){
+                    alert("执行回调函数");
+                },
+                receptionCallback: function() {
+                    alert('点击了我的接待,Yeah!');
+                },
+                queueCallback: function() {
+                    alert('点击了叫号,Yeah!');
+                }
+            }
+    );
+        	function updateText(){
+        		//重新draw
+    		$("#myReceptionText").html(120);
+    		//$("#"+x.opts.clipId3).remove();
+    		//x.currentProgress = 1;
+    		x.update(1);
+    		
+    	}
+    
+    $(function(){
+    	$('#ztbtn').live('click',function(){
+    		x.opts.isStop = true;
+			x.drawPlayBtn();  
+			$(this).hide();
+    		//显示播放按钮，并且所有的动画停止，暂停按钮消失
+    		//点击播放按钮 ，所有的动画开始，暂停按钮显示
+    	});
+    	
+    });
+</script>	
+</body>
+</html>
