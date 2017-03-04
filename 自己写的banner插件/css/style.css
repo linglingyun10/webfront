@@ -1,0 +1,65 @@
+body {
+	color: #333;
+	font-size: 14px;
+	font-family: "microsoft yahei";
+}
+
+.fd-banner-wrap {
+	position: relative;
+	width: 450px;
+	height: 350px;
+	margin: 10% auto;
+}
+
+.fd-prevbar {
+	position: absolute;
+	opacity: 0;
+    z-index: 1;
+    top: 140px;
+    left: 0;
+    width: 77px;
+    height: 71px;
+    background: url(../img/icon_banner.png) 0 -77px no-repeat;
+    cursor: pointer;
+}
+
+
+.fd-nextbar {
+	position: absolute;
+	opacity: 0;
+	z-index: 1;
+    top: 140px;
+    right: 0;
+    width: 77px;
+    height: 71px;
+    background: url(../img/icon_banner.png) 0 0 no-repeat;
+    cursor: pointer;
+}
+
+.fd-images-wrap {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.fd-navwrap {
+	opacity: 0;
+    position: absolute;
+    left: 160px;
+    bottom: 20px;
+}
+
+.fd-navwrap li {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background: url(../img/icon_banner.png) 0 -156px no-repeat;
+    text-align: center;
+    cursor: pointer;
+}
+
+.fd-navwrap li.fd-li-on {
+	 background: url(../img/icon_banner.png) 0 -194px no-repeat;
+}
