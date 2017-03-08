@@ -1,0 +1,497 @@
+.fd-back-wrap {
+    width: 220px;
+    height: 280px;
+    position: relative;
+    margin: 10px auto;
+    padding: 10px;
+    border-bottom: 2px solid #333;
+    border-right: 2px solid #333;
+    box-shadow: 2px 2px 4px #444;
+}
+
+.fd-xhr-wrap {
+    position: relative;
+    z-index: 10;
+    width: 100px;
+    height: 200px;
+    margin: 10px auto;
+    background-color: #e7c942;
+    border: 2px solid #333;
+    border-radius: 50px;
+}
+
+.fd-xhr-kz {
+    position: absolute;
+    bottom: 0;
+	width: 100px;
+    height: 65px;
+    background: #1d6f9b;
+    border-bottom-left-radius: 47px;
+    border-bottom-right-radius: 47px;
+    border-top: 2px solid #333;
+}
+
+.fd-xhr-kz:after {
+    position: absolute;
+    top: -22px;
+    left: 8px;
+	content: '';
+    width: 80px;
+    height: 20px;
+    background-color: #1d6f9b;
+    border: 2px solid #333;
+    border-bottom: 0;
+}
+
+.fd-xhr-kz-leftdd {
+    position: absolute;
+    top: -39px;
+    left: 6px;
+    width: 7px;
+    height: 35px;
+    background-color: #1d6f9b;
+    border: 2px solid #333;
+    border-top-left-radius: 12px;
+    -webkit-transform: rotate(-47deg);
+    z-index: 999;
+}
+
+.fd-xhr-kz-leftdd:after {
+	content: '';
+    background-color: #333;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    border-radius: 2px;
+}
+
+.fd-xhr-kz-rightdd {
+	right: 6px;
+    left: inherit;
+    -webkit-transform: rotate(47deg);
+    border-top-left-radius: 0;
+    border-top-right-radius: 12px;
+}
+
+.fd-xhr-kd {
+    position: absolute;
+    top: 5px;
+    left: 32px;
+    width: 30px;
+    height: 20px;
+    border: 2px solid #333;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.fd-xhr-kx-left {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: -4px;
+    top: 2px;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(-12deg);
+    border-radius: 50%;
+    border-bottom-right-radius: 100px;
+}
+
+.fd-xhr-kx-right {
+    transform: rotate(101deg);
+    right: -3px;
+    left: inherit;
+}
+
+.fd-xhr-kx-center {
+	width: 26px;
+    height: 17px;
+    position: absolute;
+    border-left: 4px solid #333;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    left: 49px;
+    bottom: 0;
+}
+
+.fd-eyes-wrap {
+    width: 100px;
+    height: 10px;
+    background-color: #333;
+    position: absolute;
+    top: 40px;
+}
+
+.fd-eyes-left {
+	width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 3px solid #333;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    left: 13px;
+}
+
+.fd-eyes-left-white {
+	position: relative;
+	width: 15px;
+    height: 15px;
+    background-color: #333;
+    border-radius: 50%;
+    margin: 7.5px auto;
+}
+
+.fd-eyes-left-white:after {
+    position: absolute;
+    content: '';
+    right: 1px;
+    top: 1px;
+    width: 7px;
+    height: 7px;
+    margin: 3px auto;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.fd-eyes-right {
+	left: 47px;
+}
+
+.fd-mouse-wrap {
+    position: absolute;
+    left: 30px;
+    top: 78px;
+    width: 30px;
+    height: 10px;
+    border: 2px solid #333;
+    background-color: #fff;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+/*胳膊样式begin*/
+.fd-leftarm-style {
+    position: absolute;
+    background-color: #e7c942;
+    border-bottom-left-radius: 10px;
+    width: 64px;
+    height: 36px;
+    border: 2px solid #333;
+    -webkit-transform: rotate(45deg);
+    z-index: 0;
+    bottom: 123px;
+    left: 46px;
+    border-right: 2px solid transparent;
+    border-top: 2px solid transparent;
+}
+
+.fd-leftarm-style:after {
+	content: '';
+    position: absolute;
+    left: 9px;
+    width: 31px;
+    height: 15px;
+    border: 4px solid #333;
+    -webkit-transform: rotateX(-45deg);
+	
+}
+
+.fd-righttarm-style {
+    position: absolute;
+    z-index: 0;
+	left: inherit;
+    right: 46px;
+    bottom: 123px;
+    width: 64px;
+    height: 36px;
+    -webkit-transform: rotate(-45deg);
+    background-color: #e7c942;
+    border-bottom-right-radius: 10px;
+    border: 2px solid #333;
+    border-left: 2px solid transparent;
+    border-top: 2px solid transparent;
+}
+
+.fd-righttarm-style:after {
+	content: '';
+    position: absolute;
+    right: 9px;
+    width: 31px;
+    height: 15px;
+    border: 4px solid #333;
+    -webkit-transform: rotateX(-45deg);
+}
+
+.fd-leftfoot-style {
+    position: absolute;
+    left: 99px;
+    bottom: 47px;
+	width: 22px;
+    height: 40px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    background-color: #333;
+}
+
+.fd-leftfoot-style:after {
+	content: '';
+    position: absolute;
+    width: 40px;
+    height: 25px;
+    background-color: #333;
+    border-top-left-radius: 50%;
+    left: -20px;
+    top: 15px;
+    z-index: 1;
+    border-bottom-left-radius: 40%;
+}
+
+.fd-rightfoot-style {
+	left: 123px;
+}
+
+.fd-rightfoot-style:after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 25px;
+    background-color: #333;
+    border-top-right-radius: 50%;
+    left: 7px;
+    top: 15px;
+    z-index: 1;
+    border-bottom-right-radius: 40%;
+}
+/*胳膊样式end*/
+
+/*底部阴影样式begin*/
+.fd-foot-shadow {
+    position: absolute;
+    bottom: 42px;
+    left: 75px;
+	width: 100px;
+    height: 5px;
+    background-color: rgba(160,164,167,0.5);
+    border-radius: 90%;
+}
+/*底部阴影样式end*/
+/*头发样式begin*/
+.fd-hair-wrap {
+    position: absolute;
+    top: 20px;
+    left: 13px;
+    width: 124px;
+    height: 122px;
+    border-top: 7px solid #333;
+    border-radius: 30%;
+    transform: rotate(46deg);
+    -webkit-transform: rotate(46deg);
+}
+
+.fd-hair-wrap:before {
+    content: '';
+    position: absolute;
+    top: -11px;
+    left: 17px;
+    width: 122px;
+    height: 102px;
+    border-top: 7px solid #333;
+    border-radius: 27%;
+    transform: rotate(46deg);
+    -webkit-transform: rotate(-10deg);
+}
+/*头发样式end*/
+
+/*头发动画样式begin*/
+.fd-hair-wrap {
+	animation: leftair 2.5s ease-in-out infinite;
+	-webkit-animation: leftair 2.5s ease-in-out infinite;
+}
+
+
+/*.fd-hair-wrap:before {
+	animation: leftair1 1s ease-in-out infinite;
+	-webkit-animation: leftair1 1s ease-in-out infinite;
+}
+*/
+@-moz-keyframes leftair {
+    0%,25%,31%,100%{
+    }
+    
+    30%{
+         -webkit-transform: rotate(56deg) translate3d(-3px,-1px,0);
+    }
+	
+}
+
+@-webkit-keyframes leftair {
+	0%,25%,31%,100%{
+    }
+    
+    30%{
+        -webkit-transform: rotate(56deg) translate3d(-3px,-1px,0);
+    }
+}
+/*
+@-moz-keyframes leftair1 {
+    0%,25%,31%,100%{
+    }
+    
+    30%{
+        -webkit-transform: rotate(-4deg);
+    }
+	
+}
+
+@-webkit-keyframes leftair1 {
+	0%,25%,31%,100%{
+    }
+    
+    30%{
+        -webkit-transform: rotate(-4deg);
+    }
+}*/
+
+/*头发动画样式end*/
+
+.fd-eyes-left-white {
+	-webkit-animation: 5s eyesanimate ease-in infinite;
+}
+
+@-webkit-keyframes eyesanimate {
+    0%,20%,50%,70%,100%{
+        -webkit-transform: translateX(0px);
+    }
+    30%,40%{
+        -webkit-transform: translateX(6px);
+    }
+    80%,90%{
+        -webkit-transform: translateX(-6px);
+    }
+}
+
+@-moz-keyframes eyesanimate {
+    0%,20%,50%,70%,100%{
+        -webkit-transform: translateX(0px);
+    }
+    30%,40%{
+        -webkit-transform: translateX(6px);
+    }
+    80%,90%{
+        -webkit-transform: translateX(-6px);
+    }
+}
+
+.fd-eyes-left-white:after {
+	-webkit-animation: 5s eyesanimate1 ease-in-out infinite;
+}
+
+@-webkit-keyframes eyesanimate1 {
+    0%,20%,50%,70%,100%{
+        top: 1px;
+        right: 1px;	
+    }
+    30%,40%{
+      top: 2px;
+      right: 1px;
+    }
+    80%,90%{
+      top: 3px;
+      right: 7px;
+    }
+}
+
+@-moz-keyframes eyesanimate1 {
+    0%,20%,50%,70%,100% {
+        top: 1px;
+        right: 1px;
+    }
+    
+    30%,40% {
+      top: 2px;
+      right: 3px;
+    }
+    
+    80%,90%{
+      top: 3px;
+      right: 7px;
+    }
+}
+
+.fd-mouse-wrap {
+	-webkit-animation: 3s mousemove ease infinite;
+}
+
+@-webkit-keyframes mousemove {
+	0% {
+		-webkit-transform:scale(1);
+	}
+	
+	50% {
+		-webkit-transform:scale(1.4);
+	}
+	
+	100% {
+		-webkit-transform:scale(1);
+	}
+	
+}
+
+.fd-leftarm-style {
+	-webkit-animation: 0.8s handlemove ease-in-out infinite;
+}
+
+.fd-righttarm-style {
+	-webkit-animation: 0.9s handlemove1 ease-in-out infinite;
+}
+
+@-webkit-keyframes handlemove {
+	0%,50%,100% {
+	   -webkit-transform: rotate(45deg);
+	}
+	
+	30% {
+	     -webkit-transform: rotate(48deg) translateX(-1px);
+	}
+}
+
+@-webkit-keyframes handlemove1 {
+	0%,50%,100% {
+	   -webkit-transform: rotate(-45deg);
+	}
+	
+	80% {
+	     -webkit-transform: rotate(-48deg) translateX(1px);
+	}
+}
+
+.fd-leftfoot-style1 {
+	-webkit-animation: 0.8s leftfootmove ease-in-out infinite;
+}
+
+@-webkit-keyframes leftfootmove {
+	0%,50%,100% {
+		-webkit-transform: rotate(0deg);
+	}
+	80% {
+		-webkit-transform: rotate(10deg);
+	}
+}
+
+
+.fd-rightfoot-style {
+	-webkit-animation: 0.8s leftfootmove1 ease infinite;
+}
+
+@-webkit-keyframes leftfootmove1 {
+	0%,50%,100% {
+		-webkit-transform: rotate(0deg);
+	}
+	30% {
+		-webkit-transform: rotate(-10deg);
+	}
+}
+
+
